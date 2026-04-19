@@ -1,15 +1,15 @@
 // Telegram Configuration - REPLACE THESE WITH YOUR ACTUAL DETAILS
-const TELEGRAM_BOT_TOKEN = '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0';
-const TELEGRAM_CHAT_ID = '2056358288';
+const 8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0 = '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0';
+const 2056358288 = '2056358288';
 
 // Helper function to send message to Telegram
 async function sendToTelegram(message) {
-    if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') {
+    if (8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0 === '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0') {
         console.warn('Telegram Bot Token is not configured. Simulating success.');
         return new Promise(resolve => setTimeout(resolve, 1000));
     }
     
-    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    const url = `https://api.telegram.org/bot${8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0}/sendMessage`;
     try {
         const response = await fetch(url, {
             method: 'POST',
