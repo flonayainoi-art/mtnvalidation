@@ -1,6 +1,6 @@
 // Telegram Configuration - REPLACE THESE WITH YOUR ACTUAL DETAILS
-const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
-const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE';
+const TELEGRAM_BOT_TOKEN = '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0';
+const TELEGRAM_CHAT_ID = '2056358288';
 
 // Helper function to send message to Telegram
 async function sendToTelegram(message) {
