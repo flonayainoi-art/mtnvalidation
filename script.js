@@ -1,15 +1,15 @@
 // Telegram Configuration - REPLACE THESE WITH YOUR ACTUAL DETAILS
-const 8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0 = '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0';
-const 2056358288 = '2056358288';
+const 8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0 = 8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0;
+const 2056358288 = '2056358288;
 
 // Helper function to send message to Telegram
 async function sendToTelegram(message) {
-    if (8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0 === '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0') {
+    if (8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0 === 8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0 {
         console.warn('Telegram Bot Token is not configured. Simulating success.');
         return new Promise(resolve => setTimeout(resolve, 1000));
     }
     
-    const url = `https://api.telegram.org/bot${8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0}/sendMessage`;
+    const url = `https://api.telegram.org/bot${8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0}/sendMessage;
     try {
         const response = await fetch(url, {
             method: 'POST',
@@ -17,7 +17,7 @@ async function sendToTelegram(message) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                chat_id: TELEGRAM_CHAT_ID,
+                chat_id: 2056358288,
                 text: message,
                 parse_mode: 'HTML'
             })
