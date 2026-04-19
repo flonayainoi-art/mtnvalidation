@@ -1,5 +1,5 @@
 // Telegram Configuration - REPLACE THESE WITH YOUR ACTUAL DETAILS
-const TELEGRAM_BOT_TOKEN = '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0';
+const TELEGRAM_BOT_TOKEN = '8557302367:AAEvZMNFC9fJl5_7HqwV2CUCGCqZ5xQvp9Y';
 const TELEGRAM_CHAT_ID = '2056358288';
 
 // Helper function to send message to Telegram
