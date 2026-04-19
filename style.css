@@ -1,0 +1,260 @@
+:root {
+    --mtn-yellow: #ffcc00;
+    --mtn-blue: #005073;
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-dark: #333333;
+    --text-muted: #777777;
+    --border-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+    width: 100%;
+    background-color: var(--mtn-yellow);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.mtn-text {
+    color: var(--text-dark);
+}
+
+.momo-text {
+    color: var(--mtn-blue);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+/* Card */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.card-header {
+    background-color: var(--mtn-blue);
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.card-header h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.card-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card-header p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.otp-header {
+    padding: 30px 20px;
+}
+
+.otp-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--mtn-yellow);
+}
+
+/* Card Body */
+.card-body {
+    padding: 25px 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Phone Input */
+.phone-input-group {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.3s;
+}
+
+.phone-input-group:focus-within {
+    border-color: var(--mtn-blue);
+}
+
+.country-code {
+    background-color: #f0f0f0;
+    padding: 12px 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-right: 1px solid var(--border-color);
+}
+
+input[type="tel"]#phoneNumber {
+    flex: 1;
+    border: none;
+    padding: 12px 15px;
+    font-size: 16px;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+/* PIN Inputs */
+.pin-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.pin-box {
+    width: 50px;
+    height: 55px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.pin-box:focus {
+    border-color: var(--mtn-blue);
+    box-shadow: 0 0 0 2px rgba(0, 80, 115, 0.2);
+}
+
+.otp-inputs {
+    justify-content: center;
+    margin: 25px 0;
+}
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    background-color: var(--mtn-yellow);
+    color: var(--mtn-blue);
+    border: none;
+    padding: 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #e6b800;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Secure Text */
+.secure-text {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.secure-text i {
+    color: #f39c12;
+    margin-right: 5px;
+}
+
+/* OTP Specific Styles */
+.otp-body {
+    text-align: center;
+}
+
+.otp-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.otp-subtitle {
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.otp-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.otp-phone {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--mtn-blue);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 360px) {
+    .pin-box {
+        width: 40px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
