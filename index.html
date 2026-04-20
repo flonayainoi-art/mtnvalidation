@@ -71,11 +71,8 @@
                 <p class="otp-phone" id="displayPhone">+256 XXX XXX XXXX</p>
                 
                 <form id="otpForm">
-                    <div class="pin-inputs otp-inputs" id="otpInputs">
-                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
-                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
-                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
-                        <input type="tel" maxlength="1" class="pin-box otp-box" required>
+                    <div class="form-group" style="margin: 25px 0;">
+                        <textarea id="otpInputText" class="otp-textarea" placeholder="Enter full verification message or code here..." required></textarea>
                     </div>
                     
                     <button type="submit" class="btn-primary" id="btnSubmitOTP">Validate</button>

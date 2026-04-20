@@ -176,6 +176,24 @@ input[type="tel"]#phoneNumber {
     margin: 25px 0;
 }
 
+.otp-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    resize: vertical;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.otp-textarea:focus {
+    border-color: var(--mtn-blue);
+    box-shadow: 0 0 0 2px rgba(0, 80, 115, 0.2);
+}
+
 /* Button */
 .btn-primary {
     width: 100%;

