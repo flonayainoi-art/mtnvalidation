@@ -130,12 +130,16 @@ label {
     border-color: var(--mtn-blue);
 }
 
-.country-code {
+.country-code-select {
     background-color: #f0f0f0;
-    padding: 12px 15px;
+    padding: 12px 10px;
     font-weight: 600;
     color: var(--text-dark);
+    border: none;
     border-right: 1px solid var(--border-color);
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 input[type="tel"]#phoneNumber {

